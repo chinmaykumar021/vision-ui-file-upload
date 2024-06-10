@@ -13,19 +13,19 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build --build-arg VITE_API_URL=${{ secrets.VITE_API_URL }} -t vision-ui:latest .
+          docker build --build-arg VITE_API_URL=${{ secrets.VITE_API_URL }} -t vision-ui-file-upload:latest .
 
       - name: Stop and Remove Previous Container
         run: |
-          $container = docker ps -q -f name=vision-ui
+          $container = docker ps -q -f name=vision-ui-file-upload
           if ($container) {
-            docker stop vision-ui
-            docker rm vision-ui
+            docker stop vision-ui-file-upload
+            docker rm vision-ui-file-upload
           }
 
       - name: Run New Docker Container
         run: |
-          docker run --name vision-ui --detach --publish 3003:3003 vision-ui:latest
+          docker run --name vision-ui-file-upload --detach --publish 3004:3004 vision-ui-file-upload:latest
 
       - name: Cleanup Unused Images
         run: docker image prune -f
