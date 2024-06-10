@@ -1,0 +1,31 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: |
+          docker build --build-arg VITE_API_URL=${{ secrets.VITE_API_URL }} -t vision-ui:latest .
+
+      - name: Stop and Remove Previous Container
+        run: |
+          $container = docker ps -q -f name=vision-ui
+          if ($container) {
+            docker stop vision-ui
+            docker rm vision-ui
+          }
+
+      - name: Run New Docker Container
+        run: |
+          docker run --name vision-ui --detach --publish 3003:3003 vision-ui:latest
+
+      - name: Cleanup Unused Images
+        run: docker image prune -f

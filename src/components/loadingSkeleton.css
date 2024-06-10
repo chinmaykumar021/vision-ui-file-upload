@@ -1,0 +1,29 @@
+.skeleton-image-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  .skeleton-image {
+    width: 350px;
+    height: 300px;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, #242424 40%, #202020 50%, #242424 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 1.5s infinite linear;
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: 0%;
+  }
+}

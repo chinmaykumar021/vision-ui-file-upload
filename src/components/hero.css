@@ -1,0 +1,26 @@
+.hero-container {
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  width: fit-content;
+  text-align: center;
+  margin-top: 10%;
+  h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
+  img {
+    width: 100px;
+    height: auto;
+    /* border: 2px solid green; */
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+  }
+  span > a {
+    color: #d06c41;
+    text-decoration: none;
+  }
+}

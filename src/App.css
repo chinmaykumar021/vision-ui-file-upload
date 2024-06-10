@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.max-container {
+  max-width: 1200px;
+  padding: 32px;
+  color: #fff;
+  /* border: 1px solid #ccc; */
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  min-height: 100vh;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #d06c41 transparent;
+  -webkit-scrollbar-width: thin;
+  -webkit-scrollbar-color: #d06c41 transparent;
+  &::webkit-scrollbar-thumb {
+    background-color: #d06c41;
+    border-radius: 6px;
+  }
+  &::webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+body {
+  border: 1px solid transparent;
+  position: relative;
+  min-height: 100vh;
+  background-color: #181818;
+  scrollbar-width: thin;
+  scrollbar-color: #d06c41 transparent;
+  -webkit-scrollbar-width: thin;
+  -webkit-scrollbar-color: #d06c41 transparent;
+  &::webkit-scrollbar-thumb {
+    background-color: #d06c41;
+    border-radius: 6px;
+  }
+  &::webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.max-container {
+  margin: 32px auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #d06c41 transparent;
+  scrollbar-radius: 6px;
+  &::webkit-scrollbar-thumb {
+    background-color: #d06c41;
+    border-radius: 6px;
+  }
+  &::webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #d06c41 transparent;
+  -webkit-scrollbar-width: thin;
+  -webkit-scrollbar-color: #d06c41 transparent;
+  &::webkit-scrollbar-thumb {
+    background-color: #d06c41;
+    border-radius: 6px;
+  }
+  &::webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
